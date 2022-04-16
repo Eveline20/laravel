@@ -6,6 +6,7 @@ use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use App\Models\Camp;
 
+
 class CampTableSeeder extends Seeder
 {
     /**
