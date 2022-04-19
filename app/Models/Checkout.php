@@ -22,4 +22,9 @@ public function Camp():BelongsTo
 {
     return $this->belongsTo(Camp::class);
 }
+public function User():BelongsTo
+{
+    return $this->belongsTo(User::class);
+}
+
 }
