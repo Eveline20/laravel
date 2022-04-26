@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<section class="checkout">
+    <section class="checkout">
         <div class="container">
             <div class="row text-center pb-70">
                 <div class="col-lg-12 col-12 header-wrap">
@@ -33,21 +33,21 @@
                                 @csrf
                                 <div class="mb-4">
                                     <label class="form-label">Full Name</label>
-                                    <input name="name" type="text" class="form-control {{$errors->has('name') ? 'is-invalid' :''}}" value="{{Auth::user()->name}}" required/>
+                                    <input name="name" type="text" class="form-control {{$errors->has('name') ? 'is-invalid' : ''}}" value="{{Auth::user()->name}}" required />
                                     @if ($errors->has('name'))
                                         <p class="text-danger">{{$errors->first('name')}}</p>
                                     @endif
                                 </div>
                                 <div class="mb-4">
                                     <label class="form-label">Email Address</label>
-                                    <input name="email" type="email" class="form-control {{$errors->has('email') ? 'is-invalid' :''}}" value="{{Auth::user()->email}}" required />
+                                    <input name="email" type="email" class="form-control {{$errors->has('email') ? 'is-invalid' : ''}}" value="{{Auth::user()->email}}" required />
                                     @if ($errors->has('email'))
                                         <p class="text-danger">{{$errors->first('email')}}</p>
                                     @endif
                                 </div>
                                 <div class="mb-4">
                                     <label class="form-label">Occupation</label>
-                                    <input name="occupation" type="text" class="form-control {{$errors->has('occupation') ? 'is-invalid' :''}}" value="{{old('occupation') ?: Auth::user()->occupation}}" required/>
+                                    <input name="occupation" type="text" class="form-control {{$errors->has('occupation') ? 'is-invalid' : ''}}" value="{{old('occupation') ?: Auth::user()->occupation}}" required />
                                     @if ($errors->has('occupation'))
                                         <p class="text-danger">{{$errors->first('occupation')}}</p>
                                     @endif
@@ -64,6 +64,13 @@
                                     <input name="address" type="text" class="form-control {{$errors->has('address') ? 'is-invalid' : ''}}" value="{{old('address') ?: Auth::user()->address}}" required />
                                     @if ($errors->has('address'))
                                         <p class="text-danger">{{$errors->first('address')}}</p>
+                                    @endif
+                                </div>
+                                <div class="mb-4">
+                                    <label class="form-label">Discount Code</label>
+                                    <input name="discount" type="text" class="form-control {{$errors->has('discount') ? 'is-invalid' : ''}}" value="{{old('discount')}}" />
+                                    @if ($errors->has('discount'))
+                                        <p class="text-danger">{{$errors->first('discount')}}</p>
                                     @endif
                                 </div>
                                 <button type="submit" class="w-100 btn btn-primary">Pay Now</button>
